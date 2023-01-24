@@ -1,0 +1,504 @@
+:root {
+  --primary: #5f70b4;
+  --secondary: #8ea7e9;
+  --light-bg: #e5e0ff;
+  --bg: #fff2f2;
+  --font-color: #010101;
+  --hover: #44f19d;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  text-decoration: none;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  background-color: var(--light-bg);
+  color: var(--font-color);
+  /* min-height: 4000px; */
+}
+
+/* Navbar */
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.4rem 7%;
+  background-color: var(--primary);
+  border-bottom: 1px solid var(#010101);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+}
+
+.navbar .navbar-logo {
+  font-size: large;
+  font-weight: 900;
+  color: var(--bg);
+  font-style: italic;
+}
+
+.navbar .navbar-logo span {
+  font-size: x-large;
+  color: #44f19d;
+}
+
+.navbar .navbar-nav a {
+  color: var(--bg);
+  display: inline-block;
+  font-size: 2 rem;
+  font-weight: 700;
+  margin: 0 1rem;
+}
+
+.navbar .navbar-nav a:hover {
+  color: var(--hover);
+}
+
+.navbar .navbar-nav a::after {
+  content: "";
+  display: block;
+  padding-bottom: 0.5rem;
+  border-bottom: 0.1rem solid var(--light-bg);
+  transform: scaleX(0);
+}
+
+.navbar .navbar-nav a:hover::after {
+  transform: scaleX(0.8);
+  transition: 0.4s linear;
+}
+
+.navbar .navbar-extra a {
+  color: var(--bg);
+  margin: 0 0.5rem;
+  /* margin yang pertama itu atas bawah trus yang 
+  sebelah kananya buat kiri kanannya */
+}
+
+.navbar .navbar-extra a:hover {
+  color: var(--secondary);
+}
+/* search bar */
+.navbar .navbar-extra .searchbar {
+  transition: opacity 1s linear;
+  opacity: 0;
+  width: 0;
+  overflow: hidden;
+}
+
+.navbar .navbar-extra .searchbar.active {
+  opacity: 1;
+  width: auto;
+}
+
+/* buat hamburger menu */
+#hamburger-menu {
+  display: none;
+}
+
+/* Hero Section */
+
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  background-image: url("../img/header-hd.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.hero::after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 20%;
+  bottom: 0;
+  background: linear-gradient(0deg, rgba(229, 224, 255, 1) 17%, rgba(244, 127, 10, 0) 55%);
+}
+
+.hero .content {
+  padding: 1.4rem 10%;
+  max-width: 60rem;
+}
+
+.hero .content h1 {
+  font-size: 4em;
+  font-style: italic;
+  color: var(--hover);
+  text-shadow: 1px 3px 5px rgba(1, 1, 3, 0.5);
+  line-height: 1.25;
+}
+
+.hero .content p {
+  font-size: 1.6rem;
+  color: rgb(255, 255, 255);
+  margin-top: 0.5rem;
+  line-height: 1.5;
+  font-weight: 400;
+  text-shadow: 10px 12px 10px rgba(1, 1, 3, 1);
+  mix-blend-mode: difference;
+  /* text-shadow: 25px 25px 25px rgba(95, 112, 180, 1); */
+}
+
+.hero .content .cta {
+  margin-top: 1rem;
+  display: inline-block;
+  padding: 1rem 3rem;
+  font-size: 1.4rem;
+  color: #fff;
+  background-color: var(--primary);
+  border-radius: 0.5rem;
+  box-shadow: 1px 1px 3px rgba(1, 1, 3, 0.5);
+}
+
+/* About Us Section */
+
+.about {
+  padding: 8rem 7% 1.4rem;
+}
+
+.about h2,
+.service h2,
+.client h2,
+.contact h2 {
+  text-align: center;
+  font-size: 2.9rem;
+  margin-bottom: 3rem;
+  text-shadow: 1px 1px 3px rgba(95, 112, 180, 0.6);
+}
+
+/* buat garis dibawah tulisan  */
+.about h2::after,
+.service h2::after,
+.client h2::after,
+.contact h2::after {
+  content: "";
+  display: block;
+  padding-bottom: 0.5rem;
+  border-bottom: 0.1rem solid var(--font-color);
+  transform: scaleX(0.1);
+}
+
+.about h2 span,
+.service h2 span,
+.client h2 span,
+.contact h2 span {
+  color: var(--secondary);
+}
+
+.about .row {
+  display: flex;
+}
+
+.about .row .about-img {
+  flex: 1 1 35rem;
+}
+
+.about .row .about-img img {
+  width: 100%;
+}
+
+.about .row .content {
+  flex: 1 1 45rem;
+  padding: 0 1rem;
+}
+
+.about .row .content h3 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.about .row .content p {
+  margin-bottom: 0.8rem;
+  font-size: 1.4rem;
+  font-weight: 200;
+  line-height: 1.6;
+  text-shadow: 1px 1px 3px rgba(95, 112, 180, 0.4);
+}
+
+/* Service Section */
+
+.service {
+  padding: 7rem 7% 1.4rem;
+}
+
+.service h2 {
+  margin-bottom: 1.3rem;
+}
+
+.service p {
+  text-align: center;
+  max-width: 30rem;
+  margin: auto;
+  font-size: 1.2rem;
+  font-weight: 200;
+  line-height: 1.5;
+}
+/* buat img nya service */
+.service .row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 5rem;
+  justify-content: center;
+}
+
+.service .row .service-card {
+  text-align: center;
+}
+
+.service .row .service-card img {
+  border-radius: 50%;
+  width: 40%;
+}
+.service .row .service-card .service-card-img-2 {
+  border-radius: 50%;
+  width: 55%;
+}
+.service .row .service-card .service-card-title {
+  margin: 1.5rem auto 0.5rem;
+  font-size: 1.4rem;
+}
+
+/* Clients Section */
+
+.client {
+  padding: 7rem 7% 1.4rem;
+}
+
+.client .row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 5rem;
+  justify-content: space-evenly;
+}
+
+.client .row .client-company {
+  text-align: center;
+  margin: auto;
+
+  padding-bottom: 1rem;
+}
+
+.client .row .client-company .client-company-img {
+  border-radius: 30%;
+  width: 30%;
+}
+
+.client .row .client-company .client-company-title {
+  margin: 1.5rem auto 0.5rem;
+  font-size: 1.4rem;
+}
+
+/* Contact Us Section */
+
+.contact {
+  padding: 6.5rem 7% 1rem;
+}
+
+.contact .row {
+  display: flex;
+  margin-top: 1rem;
+  background-color: var(--primary);
+}
+
+.contact .row .map {
+  flex: 1 1 45rem;
+  /* height: 20rem; */
+  width: 100%;
+  object-fit: cover;
+}
+
+.contact .row form {
+  flex: 1 1 45rem;
+  padding: 2rem 2rem;
+  text-align: center;
+}
+
+.contact .row form .input-group {
+  display: flex;
+  align-items: center;
+  margin-top: 2rem;
+  background-color: var(--light-bg);
+  border: 1px solid var(--font-color);
+  padding-left: 2rem;
+}
+
+.contact .row form .input-group .input {
+  width: 100%;
+  padding: 0.7rem;
+  font-size: 1.6rem;
+  background: none;
+}
+.contact .row form .input-group textarea {
+  width: 100%;
+  height: auto;
+  padding: 3rem;
+  font-size: 1.4rem;
+  background: none;
+}
+
+.contact .row form .btn {
+  margin-top: 2rem;
+  display: inline-block;
+  padding: 1.5rem 3rem;
+  font-size: 1.7rem;
+  color: var(--font-color);
+  background-color: var(--secondary);
+  cursor: pointer;
+  border-radius: 60%;
+  border: 1px solid var(--font-color);
+}
+
+.contact .row form .btn:hover {
+  background-color: #44f19d;
+  color: var(--secondary);
+}
+
+/* Footer Section */
+
+footer {
+  background-color: var(--primary);
+  text-align: center;
+  padding: 1rem 0 2rem;
+  margin-top: 3rem;
+}
+
+footer .socials {
+  padding: 1rem 0;
+}
+
+footer .socials a {
+  color: #fff;
+  margin: 1rem;
+}
+
+footer .socials a:hover,
+footer .links a:hover {
+  color: #44f19d;
+}
+
+footer .links {
+  margin-bottom: 1.2rem;
+}
+
+footer .links a {
+  color: #fff;
+  padding: 0.7rem 1rem;
+}
+
+footer .credit {
+  font-size: 0.8rem;
+  color: #fff;
+}
+
+footer .credit a {
+  color: var(--font-color);
+  font-weight: 700;
+}
+
+footer .credit a:hover {
+  color: #44f19d;
+}
+
+/* Media Queries */
+
+/* Laptop */
+@media (max-width: 1440px) {
+  html {
+    font-size: 75%;
+  }
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+  html {
+    font-size: 62.5%;
+  }
+
+  #hamburger-menu {
+    display: inline-block;
+  }
+
+  .navbar .navbar-nav {
+    position: absolute;
+    top: 100%;
+    right: -100%;
+    background-color: var(--secondary);
+    width: 30rem;
+    height: 100vh;
+    transition: 0.3s;
+  }
+
+  .navbar .navbar-nav.active {
+    right: 0;
+  }
+
+  .navbar .navbar-nav a {
+    color: var(--bg);
+    display: block;
+    margin: 1.5rem;
+    padding: 0.5rem;
+    font-size: 2rem;
+  }
+
+  .navbar .navbar-nav a::after {
+    transform-origin: 0 0;
+  }
+  .navbar .navbar-nav a:hover::after {
+    transform: scaleX(0.4);
+  }
+
+  .about .row {
+    flex-wrap: wrap;
+  }
+
+  .about .row .about-img img {
+    height: 24rem;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .about .row .content {
+    padding: 0;
+  }
+  .about .row .content h3 {
+    margin-top: 1.5rem;
+    font-size: 2.5rem;
+  }
+  .about .row .content p {
+    font-size: 1.8rem;
+  }
+
+  .contact .row {
+    flex-wrap: wrap;
+  }
+
+  .contact .row .map {
+    height: 30rem;
+  }
+
+  .contact .row form {
+    padding-top: 0;
+  }
+}
+/* Mobile Phone */
+@media (max-width: 450px) {
+  html {
+    font-size: 55%;
+  }
+}
