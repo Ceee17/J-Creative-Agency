@@ -115,7 +115,8 @@ body {
 }
 
 .show-search-input {
-  width: 150px;
+  width: 200px;
+  height: 25px;
   padding: 0 10px;
 }
 
