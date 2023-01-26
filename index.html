@@ -27,8 +27,9 @@
         <a href="#contact">Contact Us</a>
       </div>
       <div class="navbar-extra">
-        <a href="#" id="search"><i data-feather="search"></i></a>
-        <input type="text" placeholder="Search For Services" id="search-input" class="searchbar" />
+        <a href="#" id="search" class="search-logo" onclick="showSearchInput()"><i data-feather="search"></i></a>
+        <!-- <i data-feather="search" id="search" class="search-logo" onclick="showSearchInput()"></i> -->
+        <input type="text" placeholder="Search For Services" id="search-input" class="search-input" />
         <a href="#" id="hamburger-menu"><i data-feather="menu"></i></a>
       </div>
     </nav>
@@ -38,7 +39,7 @@
     <section class="hero" id="home">
       <main class="content">
         <h1>WE'RE HERE TO HELP ALL OF UR MARKETING NEEDS!</h1>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis, soluta sunt vitae similique excepturi ab laudantium reprehenderit laboriosam beatae dolorem.</p>
+        <p><span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis, soluta sunt vitae similique excepturi ab laudantium reprehenderit laboriosam beatae dolorem.</span></p>
         <a href="index.html" class="cta">Find Us Now!</a>
       </main>
     </section>
@@ -173,6 +174,8 @@
     <script>
       feather.replace();
     </script>
+    <!-- Script Jquery -->
+    <!-- <script src="jquery-3.6.3.min.js"></script> -->
     <!-- Script.js -->
     <script src="js/script.js"></script>
   </body>
